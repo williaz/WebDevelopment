@@ -13,7 +13,12 @@ https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
   - In C# or Java, it’s meaningful to think of a one-to-one correspondence between runtime types and their compile-time declarations.
   
   
-  
-  
+### Decorator
+https://www.typescriptlang.org/docs/handbook/decorators.html
+- A Decorator is a special kind of **declaration** that can be **attached to** a class declaration, method, accessor, property, or parameter. Decorators use the form **@expression**, where expression must **evaluate to a function** that will be called at runtime with information about the decorated declaration.
+- Decorator Composition
+  - fucntion composition: g(f(x))
+  - The expressions for each decorator are evaluated top-to-bottom. 
+  - The results are then called as functions from bottom-to-top.
   
   
