@@ -1,2 +1,4 @@
 # UI
-Front end
+Front end stuff:
+
+TS, Ng, npm, html, DOM
