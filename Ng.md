@@ -25,26 +25,81 @@
 - @NgModule()
   - declarations: The components , directives , and pipes that belong to this NgModule.
   - exports: The **subset of declarations** that should be visible and usable in the component templates of **other** NgModules.
+    - A root NgModule has no reason to export anything because other modules don't need to import the root NgModule.
   - imports: Other modules whose exported classes are **needed** by component templates declared in this NgModule.
   - providers: Creators of **services** that this NgModule contributes to the global collection of services; they become accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)
   - bootstrap: The main application view, called the root component , which hosts all other app views. Only the **root Ng module** should set the bootstrappropert
 
 https://angular.io/guide/architecture-modules
+- The components that belong to an NgModule share a compilation context.
+- A view hierarchy can mix views defined in components that belong to different NgModules. 
+  - a component - a host view
+- In JavaScript each file is a module and all objects defined in the **file** belong to that module. 
+  - https://exploringjs.com/es6/ch_modules.html
+  - Angular loads as a collection of JavaScript modules - library modules. Each Angular library name begins with the @angular prefix. Install them with the node package manager npm and import parts of them with JavaScript import statements.
+  - import VS @NgModule imports:
+
+
+
+
+
 
 ## Component
 - Every Angular application has at least one component, the **root component** that connects a component hierarchy with the page document object model (**DOM**). 
 - Each component defines a class that contains application data and logic, and is associated with an HTML template that defines a view to be displayed in a target environment.
 
-module VS componenet
+- [x] [module VS componenet](https://stackoverflow.com/questions/40073941/whats-the-difference-between-an-angular-component-and-module#:~:text=Typically%20module%20is%20a%20cohesive,will%20make%20up%20your%20application.)
+- your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. Modules allow you to manage your components to bring modularity to your app.
+
+- A component controls a patch of screen called a view.
+
+- @Component metadata configures
+  - templateUrl: host view: associates a template .html
+  - selector: a HTML tag: how the component can be referenced in HTML
+  - providers: what services it requires.
+
+
+
+
+### lifecycle TODO
+https://angular.io/guide/lifecycle-hooks
+
+
+
 
 ### Template
 - A template combines HTML with Angular markup
-- Template directives provide program logic, and binding markup connects your application data and the DOM.
+- Your template can use data binding to coordinate the app and DOM data, pipes to transform data before it is displayed, and directives to apply app logic to what gets displayed.
+- Template **directives** provide program logic, and binding markup connects your application data and the DOM.
+  - types:
+    - structural: alter **layout**
+      - ```*ngFor *ngIf```
+    - attribute: alter the **appearance** or behavior of an existing element.
+      - ```ngModel```
+    - component
+      - ngStyle, ngClass
 - 2 types of **data binding**
   - Event binding: responds to user input
-  - Property binding: interpolate computed value into HTML
-- Angular supports two-way data binding , meaning that changes in the DOM, such as user choices, are also reflected in your program data.
+    - ```(click)
+  - Property binding: interpolate computed value into HTML (component to DOM)
+    - interpolcation ```{{hero.name}}```
+    - property binding ```[hero]```
+  - Two-way data binding
+    - template-drive forms
+    - ```[(ngModel)]="hero.name"```
+  - Angular **processes all data bindings once for each JavaScript event cycle**, from the root of the application component tree through all child components.
+  
+#### Pipes
 - Your templates can use **pipes** to improve the user experience by transforming values for display.
+- declare display-value transformations  in template HTML
+- A class with the @Pipe decorator defines a function that transforms input values to output values for display in a view.
+
+
+
+
+
+
+
 
 ## Services and dependency injection
 - For data or logic that isn't associated with a specific view, and that you want to **share across components**, you create a service class.
