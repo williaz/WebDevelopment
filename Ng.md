@@ -1,5 +1,7 @@
 - Most Angular code can be written with just the latest JavaScript, using types for dependency injection, and using decorators for metadata.
 
+https://angular.io/guide/architecture-services
+https://stackblitz.com/edit/angular-zmqxns
 
 # Concepts
 - an Angular app is defined by a set of NgModules. Angular provides the Routerservice to help you define navigation paths among views. 
@@ -105,6 +107,24 @@ https://angular.io/guide/lifecycle-hooks
 - For data or logic that isn't associated with a specific view, and that you want to **share across components**, you create a service class.
 - Dependency injection (DI) lets you keep your component classes lean and efficient. They don't fetch data from the server, validate user input, or log directly to the console; they **delegate such tasks to services**
 
+
+### VS component
+- Component is view Controller: Ideally, a component's job is to enable the user experience and nothing more. A component should present properties and methods for data binding, in order to mediate between the view (rendered by the template) and the application logic (which often includes some notion of a model).
+- Reusable Service: A component can delegate certain tasks to services, such as fetching data from the server, validating user input, or logging directly to the console. By defining such processing tasks in an injectable service class, you make those tasks available to any component. 
+
+#### Injecter = container; provider: bean method; looking at the constructor parameter types for dependency
+- For any dependency that you need in your app, you must register a provider with the app's injector, so that the injector can use the provider to create new instances. For a service, the provider is typically the service class itself.
+
+
+#### scope
+- root
+- NgModule
+- component
+
+
+https://angular.io/guide/dependency-injection
+
+
 ### Rounting
 - The Angular RouterNgModule provides a service that lets you **define a navigation path** among the different application states and view hierarchies in your app. 
 
@@ -121,6 +141,16 @@ https://angular.io/guide/lifecycle-hooks
 https://angular.io/guide/build
 # Configuration
 https://angular.io/guide/file-structure
+
+- workspace contains 1 or more projects
+- ng new <my-prejct>: a new worksapce with a same name project
+
+
+
+
+
+
+
 # Coding style
 https://angular.io/guide/styleguide
 
