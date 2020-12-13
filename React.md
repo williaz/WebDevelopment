@@ -24,3 +24,21 @@ this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
 - Transpiling is the process of translating modern JavaScript code into a syntax that the browser actually supports. This is necessary because, as the JavaScript language evolves and adds new features, the browser must keep up and support those additions. Therefore, the feature set that the browser can support will always be a bit behind the overall JavaScript language.
   - Babel is a tool that achieves transpilation.
 
+### Lifecycle 
+- componentDidMount
+- componentWillUnmount
+- stateless Functional components
+```js
+
+  fetchJokes = () => {
+    fetch('https://official-joke-api.appspot.com/random_ten')
+      .then(response => response.json())
+      .then(json => this.setState({ jokes: json }))
+      .catch(error => alert(error.message));
+  }
+
+
+```
+
+
+
