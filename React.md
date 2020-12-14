@@ -37,7 +37,38 @@ this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
       .catch(error => alert(error.message));
   }
 
+ReactDOM.render(
+  <Router history={createBrowserHistory()}>
+    <Switch>
+      <Route exact path='/' render={() => <Header><App /></Header>} />
+      <Route path='/jokes' render={() => <Header><Jokes /></Header>} />
+      <Route path='/music-master' render={() => <Header><MusicMaster /></Header>} />
+      <Route path='/evens-or-odds' render={() => <Header><EvensOrOdds /></Header>} />
+      <Route path='/reaction' render={() => <Header><Reaction /></Header>} />
+    </Switch>
+  </Router>,
+  document.getElementById('root')
+);
 
+
+const Header = ({ children }) => {
+  const style = {
+    display: 'inline-block',
+    margin: 10,
+    marginBottom: 30
+  };
+
+  return (
+    <div>
+      <div>
+        <h3 style={style}><Link to='/'>Home</Link></h3>
+        <h3 style={style}><Link to='/jokes'>Jokes</Link></h3>
+        <h3 style={style}><Link to='/music-master'>Music Master</Link></h3>
+      </div>
+      {children}
+    </div>
+  )
+}
 ```
 
 
