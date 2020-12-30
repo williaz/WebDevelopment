@@ -1,3 +1,11 @@
+- use let instead of var
+  - var: function scope
+  - let: block scope
+
+- property: method
+  - get x(); set x()
+
+
 
 ### TS in OOP
 https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
