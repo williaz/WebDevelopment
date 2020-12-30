@@ -1,3 +1,25 @@
+- module: building block
+- DI: 
+ - @NgModule.providers
+ - singleton
+ - @Injectable
+
+- some have html attr - DOM prop 1: 1 mapping, some not 
+```
+// text interpolate
+{{}}
+// DOM prop binding: 
+[]
+
+package.json ^3.3.7: can use any latest 3. major version
+```
+
+
+
+
+
+
+
 - Most Angular code can be written with just the latest JavaScript, using types for dependency injection, and using decorators for metadata.
 
 https://angular.io/guide/architecture-services
