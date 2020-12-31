@@ -8,16 +8,25 @@
 ```
 // text interpolate
 {{}}
-// DOM prop binding: 
+// DOM prop binding, class binding, style binding
 []
-
+[class.active]
+[style.backgroundColor]
 package.json ^3.3.7: can use any latest 3. major version
+
+
+#templateVarable
 ```
+- Event bubbling: parent knows
+  - ```$event.stopPropagation();```
 
+- prop binding: component to view
+- event binding: view to component
+- two way binding: ngModel from FormsModule
 
-
-
-
+- custom pipe: 
+  - PipeTransform
+  - @Pipe
 
 
 - Most Angular code can be written with just the latest JavaScript, using types for dependency injection, and using decorators for metadata.
