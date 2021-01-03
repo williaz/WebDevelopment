@@ -28,6 +28,13 @@ package.json ^3.3.7: can use any latest 3. major version
   - PipeTransform
   - @Pipe
 
+- @Input
+- @Output, EventEmitter.emit(val), onChange($event)
+- shadow DOM: apply scoped styles, no outer
+  - elem.createShadowRoot()
+- encapsulation: ViewEncapulation.Emulated
+- ng-content
+
 
 - Most Angular code can be written with just the latest JavaScript, using types for dependency injection, and using decorators for metadata.
 
