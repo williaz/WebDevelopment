@@ -80,7 +80,17 @@ https://angular.io/guide/architecture-modules
   - import VS @NgModule imports:
 
 
-
+- FormControl <- ngModel
+  - Directives: template-driven, ngModel
+  - code: reractive
+- FormGroup 
+  - ngForm
+  - ngModelGroup
+- FormGroup
+  - FormControl
+  - FormArray
+  - FormGroup
+- FormBuilder
 
 
 
