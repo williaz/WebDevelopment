@@ -64,8 +64,27 @@ console.log(JSON.stringify({ x: 5, y: 6 }));
 // Expected output: '{"x":5,"y":6}'
 ```
 
+### save file
+- file-saver lib
+```js
+import {saveAs} from 'file-saver'
 
+saveFileService(filename).subsribe(
+  (response: HttpResponse<any>) => {
+    const blob = new Blob([response.body], {type: 'application/octet-stream'});
+    saveAs(blob, filename);
+  },
+  (errResponse: HttpErrorResponse) => {
+    const blob = new Blob([errResponse.error], {type: 'application/json'});
+    blob.text().then(txt => {
+      const err = JSON.parse(txt);
+    })
+  }
+)
+```
 
+### Default Angular timeout
+- set by server and browser
 
 
 
